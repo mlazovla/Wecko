@@ -13,7 +13,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class NearestToilet extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,6 +36,27 @@ public class NearestToilet extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+        //LinearLayout toiletInfoLeafs = (LinearLayout )findViewById(R.id.toiletInfo);
+        final LinearLayout toiletInfoLeafs = (LinearLayout )findViewById(R.id.toiletInfo);
+        final TextView toiletReview = (TextView) findViewById(R.id.toiletReview);
+        toiletReview.setVisibility(View.INVISIBLE);
+
+        toiletInfoLeafs.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+
+                if (toiletReview.getVisibility() ==  View.VISIBLE) {
+                    toiletReview.setVisibility(View.INVISIBLE);
+                    return;
+                }
+                if (toiletReview.getVisibility() ==  View.INVISIBLE) {
+                    toiletReview.setVisibility(View.VISIBLE);
+                    return;
+                }
+
+            }
+        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

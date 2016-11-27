@@ -24,7 +24,25 @@
             android:id="@+id/toiletImageSection"
             android:layout_weight="1"
             android:background="@drawable/wc_background"
-            ></LinearLayout>
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/infoAfterClick">
+
+                <TextView
+                    android:text="Je uplne mega giga bomba, radost srat :-)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/toiletReview"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="18sp"
+                    android:background="#DDDDDD"
+                    android:padding="5dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -49,14 +67,35 @@
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp">
 
-                    <TextView
-                        android:text="TextView"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_height="wrap_content"
-                        android:id="@+id/toiletInfo"
                         android:layout_weight="1"
-                        android:textSize="18sp"
-                        android:layout_gravity="left"/>
+                        android:layout_width="wrap_content"
+                        android:id="@+id/toiletInfo"
+                        android:clickable="true">
+
+                        <ImageView
+                            app:srcCompat="@drawable/img_leaf_active"
+                            android:id="@+id/leafOne"
+                            android:layout_weight="1"
+                            android:layout_height="25dp"
+                            android:layout_width="10dp" />
+
+                        <ImageView
+                            app:srcCompat="@drawable/img_leaf_active"
+                            android:id="@+id/leafTwo"
+                            android:layout_weight="1"
+                            android:layout_height="25dp"
+                            android:layout_width="10dp" />
+
+                        <ImageView
+                            app:srcCompat="@drawable/img_leaf_disable"
+                            android:id="@+id/leafThree"
+                            android:layout_weight="1"
+                            android:layout_height="25dp"
+                            android:layout_width="10dp" />
+                    </LinearLayout>
 
                     <TextView
                         android:text="4 minuty | 300 m"
