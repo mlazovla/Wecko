@@ -14,11 +14,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class NearestToilet extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ImageButton mapButton;
+    ImageButton compasButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +71,27 @@ public class NearestToilet extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         this.switchContentLayouts(R.id.content_nearest_toilet);
+
+        // Map button
+        mapButton = (ImageButton)this.findViewById(R.id.btnNavMap);
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.google.cz/maps/dir/50.0752982,14.4561334/Ve%C5%99ejn%C3%A9+WC,+Orlick%C3%A1,+130+00+Praha+3/@50.0764717,14.453885,17z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x470b9362bcbf46cd:0x8de28d810eb34686!2m2!1d14.4555697!2d50.0776336!3e2?hl=cs"));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+            }
+        });
+        // Map button
+        mapButton = (ImageButton)this.findViewById(R.id.btnNavCompass);
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Compass.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -79,28 +104,7 @@ public class NearestToilet extends AppCompatActivity
         }
     }
 
-/*    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nearest_toilet, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-*/
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -119,11 +123,11 @@ public class NearestToilet extends AppCompatActivity
         } else if (id == R.id.nav_addToilet) {
             this.switchContentLayouts(R.id.content_add_toilet);
         } else if (id == R.id.nav_myToilet) {
-            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
+            this.switchContentLayouts(R.id.content_my_toilets);
         } else if (id == R.id.nav_settings) {
-            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
+            this.switchContentLayouts(R.id.content_settings);
         } else if (id == R.id.nav_about) {
-            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
+            this.switchContentLayouts(R.id.content_about);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -136,8 +140,11 @@ public class NearestToilet extends AppCompatActivity
         (findViewById(R.id.content_nearest_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_approve_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_add_toilet)).setVisibility(View.GONE);
+        (findViewById(R.id.content_my_toilets)).setVisibility(View.GONE);
+        (findViewById(R.id.content_settings)).setVisibility(View.GONE);
+        (findViewById(R.id.content_about)).setVisibility(View.GONE);
 
-        // Enable choosed content
+        // Enable one content
         (findViewById(idToEnable)).setVisibility(View.VISIBLE);
     }
 }
