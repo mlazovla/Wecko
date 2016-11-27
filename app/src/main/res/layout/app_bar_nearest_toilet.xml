@@ -24,6 +24,11 @@
     <include layout="@layout/content_nearest_toilet" />
     <include layout="@layout/content_approve_toilet" />
     <include layout="@layout/content_add_toilet" />
+    <include layout="@layout/content_my_toilets" />
+    <include layout="@layout/content_settings" />
+    <include layout="@layout/content_about" />
+    <include layout="@layout/content_compas" />
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

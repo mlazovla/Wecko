@@ -97,11 +97,11 @@ public class NearestToilet extends AppCompatActivity
         } else if (id == R.id.nav_addToilet) {
             this.switchContentLayouts(R.id.content_add_toilet);
         } else if (id == R.id.nav_myToilet) {
-            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
+            this.switchContentLayouts(R.id.content_my_toilets);
         } else if (id == R.id.nav_settings) {
-            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
+            this.switchContentLayouts(R.id.content_settings);
         } else if (id == R.id.nav_about) {
-            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
+            this.switchContentLayouts(R.id.content_about);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -114,8 +114,12 @@ public class NearestToilet extends AppCompatActivity
         (findViewById(R.id.content_nearest_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_approve_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_add_toilet)).setVisibility(View.GONE);
+        (findViewById(R.id.content_my_toilets)).setVisibility(View.GONE);
+        (findViewById(R.id.content_settings)).setVisibility(View.GONE);
+        (findViewById(R.id.content_about)).setVisibility(View.GONE);
+        (findViewById(R.id.content_compas)).setVisibility(View.GONE);
 
-        // Enable choosed content
+        // Enable one content
         (findViewById(idToEnable)).setVisibility(View.VISIBLE);
     }
 }
