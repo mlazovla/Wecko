@@ -13,8 +13,91 @@
     tools:context="com.example.vml.wecko.NearestToilet"
     tools:showIn="@layout/app_bar_nearest_toilet">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About application!" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/about_background_image"
+                android:id="@+id/imageView2"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true" />
+
+            <TextView
+                android:text="WeCko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewAboutWecko"
+                android:textSize="50sp"
+                android:textAlignment="center"
+                android:textStyle="normal|bold" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*"
+                android:id="@+id/tableLayoutAuthors">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:text="Petr Antoš"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewStart"
+                        android:gravity="left"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:text="Vladimír Mlázovský"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewEnd"
+                        android:gravity="right"
+                        android:textSize="22sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:text="Jan Kozák"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewStart"
+                        android:gravity="left"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:text="Ivan Prokipčák"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="viewEnd"
+                        android:gravity="right"
+                        android:textSize="22sp" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aplikace zobrazuje nejbližší záchod, jeho čistotu a vzdálenost a nabízí navigaci k němu pomocí kompasu, nebo externí navigace. Dále umožnuje zobrazení záchodů v nejbližším okolí. Přihlášení uživatelé mají k dispozici možnost záchody přidávat, hodnotit a komentovat. Aplikace byla vyvinuta v rámci předmětu MI-NUR na FIT ČVUT. Aplikace používá obsah z freepik.com"
+                android:layout_marginTop="40sp"
+                android:layout_below="@+id/tableLayoutAuthors"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
