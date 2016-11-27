@@ -17,7 +17,7 @@
             android:title="Approve toilet" />
         <item
             android:id="@+id/nav_addToilet"
-            android:icon="@drawable/icon_toilet_approve"
+            android:icon="@drawable/icon_add_toilet"
             android:title="Add Toilet" />
         <item
             android:id="@+id/nav_myToilet"
