@@ -1,5 +1,7 @@
 package com.example.vml.wecko;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,8 +12,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 
 public class NearestToilet extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +42,7 @@ public class NearestToilet extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        this.switchContentLayouts(R.id.content_nearest_toilet);
     }
 
     @Override
@@ -52,7 +55,7 @@ public class NearestToilet extends AppCompatActivity
         }
     }
 
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.nearest_toilet, menu);
@@ -73,7 +76,7 @@ public class NearestToilet extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
+*/
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -81,23 +84,36 @@ public class NearestToilet extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_nearestToilet) {
-            // Handle the nearest toilet action
+            this.switchContentLayouts(R.id.content_nearest_toilet);
         } else if (id == R.id.nav_mapToilet) {
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.google.cz/maps/place/Ve%C5%99ejn%C3%A9+WC/@50.0776336,14.453381,17z/data=!3m1!4b1!4m5!3m4!1s0x470b9362bcbf46cd:0x8de28d810eb34686!8m2!3d50.0776336!4d14.4555697"));
+            intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+            startActivity(intent);
 
-        } else if (id == R.id.nav_approbate_toilet) {
-
+        } else if (id == R.id.nav_approve_toilet) {
+            this.switchContentLayouts(R.id.content_approve_toilet);
         } else if (id == R.id.nav_addToilet) {
-
+            this.switchContentLayouts(R.id.content_add_toilet);
         } else if (id == R.id.nav_myToilet) {
-
+            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
         } else if (id == R.id.nav_settings) {
-
+            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
         } else if (id == R.id.nav_about) {
-
+            startActivity(new Intent(getApplicationContext(), NearestToilet.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void switchContentLayouts(int idToEnable) {
+        // Disable all contents
+        (findViewById(R.id.content_nearest_toilet)).setVisibility(View.GONE);
+        (findViewById(R.id.content_approve_toilet)).setVisibility(View.GONE);
+        (findViewById(R.id.content_add_toilet)).setVisibility(View.GONE);
+
+        // Enable choosed content
+        (findViewById(idToEnable)).setVisibility(View.VISIBLE);
     }
 }

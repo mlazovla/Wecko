@@ -22,6 +22,8 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_nearest_toilet" />
+    <include layout="@layout/content_approve_toilet" />
+    <include layout="@layout/content_add_toilet" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
