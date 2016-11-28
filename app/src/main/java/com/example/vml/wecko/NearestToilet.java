@@ -82,9 +82,9 @@ public class NearestToilet extends AppCompatActivity
                 startActivity(intent);
             }
         });
-        // Map button
-        mapButton = (ImageButton)this.findViewById(R.id.btnNavCompass);
-        mapButton.setOnClickListener(new View.OnClickListener() {
+        // Compas button
+        compasButton = (ImageButton)this.findViewById(R.id.btnNavCompass);
+        compasButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Compass.class);
