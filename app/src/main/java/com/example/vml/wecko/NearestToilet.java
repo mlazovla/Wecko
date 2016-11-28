@@ -1,6 +1,7 @@
 package com.example.vml.wecko;
 
 import android.content.Intent;
+import android.media.Rating;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -129,6 +130,12 @@ public class NearestToilet extends AppCompatActivity
             this.switchContentLayouts(R.id.content_settings);
         } else if (id == R.id.nav_about) {
             this.switchContentLayouts(R.id.content_about);
+        } else if (id == R.id.nav_testRating) {
+            Intent intent = new Intent(getApplicationContext(), RatingToilet.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_testReport) {
+            Intent intent = new Intent(getApplicationContext(), ReportToilet.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

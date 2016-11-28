@@ -31,6 +31,14 @@
             android:id="@+id/nav_about"
             android:icon="@drawable/icon_toilet"
             android:title="O aplikaci" />
+        <item
+            android:id="@+id/nav_testReport"
+            android:icon="@drawable/ic_menu_send"
+            android:title="test Nahlasit" />
+        <item
+            android:id="@+id/nav_testRating"
+            android:icon="@drawable/ic_menu_send"
+            android:title="test Ohodnotit" />
     </group>
 
 </menu>
