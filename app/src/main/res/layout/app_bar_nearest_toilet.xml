@@ -22,12 +22,18 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_nearest_toilet" />
-    <include layout="@layout/content_approve_toilet" />
-    <include layout="@layout/content_add_toilet" />
-    <include layout="@layout/content_my_toilets" />
-    <include layout="@layout/content_settings" />
-    <include layout="@layout/content_about" />
-    <include layout="@layout/activity_compass" />
+    <include layout="@layout/content_approve_toilet"
+        android:visibility="gone"/>
+    <include layout="@layout/content_add_toilet"
+        android:visibility="gone"/>
+    <include layout="@layout/content_my_toilets"
+        android:visibility="gone"/>
+    <include layout="@layout/content_settings"
+        android:visibility="gone"/>
+    <include layout="@layout/content_about"
+        android:visibility="gone"/>
+    <include layout="@layout/activity_compass"
+        android:visibility="gone"/>
 
 
     <android.support.design.widget.FloatingActionButton
