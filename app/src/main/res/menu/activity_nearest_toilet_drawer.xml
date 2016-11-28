@@ -6,31 +6,31 @@
         <item
             android:id="@+id/nav_nearestToilet"
             android:icon="@drawable/icon_toilet"
-            android:title="Nearest Toilet" />
+            android:title="Nejbližší" />
         <item
             android:id="@+id/nav_mapToilet"
             android:icon="@drawable/icon_position"
-            android:title="Toilet map" />
+            android:title="Mapa WC" />
         <item
             android:id="@+id/nav_approve_toilet"
             android:icon="@drawable/icon_toilet_approve"
-            android:title="Approve toilet" />
+            android:title="Schvalování" />
         <item
             android:id="@+id/nav_addToilet"
             android:icon="@drawable/icon_toilet_approve"
-            android:title="Add Toilet" />
+            android:title="Přidat" />
         <item
             android:id="@+id/nav_myToilet"
             android:icon="@drawable/icon_mytoilets"
-            android:title="My Toilets" />
+            android:title="Moje WC" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Settings" />
+            android:title="Nastavení" />
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/icon_toilet"
-            android:title="About" />
+            android:title="O aplikaci" />
     </group>
 
 </menu>
