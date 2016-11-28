@@ -13,8 +13,75 @@
     tools:context="com.example.vml.wecko.NearestToilet"
     tools:showIn="@layout/app_bar_nearest_toilet">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/detail"
+        android:clickable="true"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+        <TextView
+            android:text="Holešovice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView16"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:textAlignment="textStart"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:text="DETAIL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:id="@+id/textView17"
+            android:textSize="14sp"
+            android:textStyle="normal|bold"
+            android:textAlignment="textStart"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/holo_blue_light" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/detailImage"
+        android:clickable="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textView17"
+        android:layout_alignParentEnd="true">
+
+
+        <ImageView
+            android:layout_width="127dp"
+            android:layout_height="66dp"
+            app:srcCompat="@drawable/ic_menu_camera"
+            android:id="@+id/imageView4" />
+
+        <ImageView
+            android:layout_width="113dp"
+            android:layout_height="77dp"
+            app:srcCompat="@drawable/wc_background"
+            android:id="@+id/imageView5" />
+    </LinearLayout>
+
     <TextView
+        android:text="Výstaviště Holešovice, Praha 4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Moje záchody" />
-</RelativeLayout>
+        android:layout_marginTop="11dp"
+        android:id="@+id/textView17"
+        android:layout_below="@+id/detail"
+        android:layout_alignStart="@+id/detail" />
+
+
+
+    </RelativeLayout>

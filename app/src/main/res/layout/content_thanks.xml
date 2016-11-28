@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="396dp"
+        android:layout_height="150dp"
+        app:srcCompat="@android:drawable/star_big_on"
+        android:id="@+id/imageView6"
+        android:layout_weight="0.12"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:text="Děkujeme "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView18"
+        android:textAlignment="center"
+        android:textStyle="normal|bold"
+        android:textSize="30sp"
+        android:layout_weight="0.07"
+        android:layout_marginTop="70dp" />
+
+    <Button
+        android:text="Hotovo"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_weight="0.07"
+        android:layout_marginTop="80dp"
+        android:layout_width="150dp"
+        android:layout_marginLeft="120dp"
+        android:background="@android:color/holo_blue_dark" />
+</LinearLayout>
