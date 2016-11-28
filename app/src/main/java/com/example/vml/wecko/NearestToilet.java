@@ -36,8 +36,8 @@ public class NearestToilet extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getApplicationContext(), AddToilet.class);
+                startActivity(intent);
             }
         });
 
@@ -121,7 +121,8 @@ public class NearestToilet extends AppCompatActivity
         } else if (id == R.id.nav_approve_toilet) {
             this.switchContentLayouts(R.id.content_approve_toilet);
         } else if (id == R.id.nav_addToilet) {
-            this.switchContentLayouts(R.id.content_add_toilet);
+            Intent intent = new Intent(getApplicationContext(), AddToilet.class);
+            startActivity(intent);
         } else if (id == R.id.nav_myToilet) {
             this.switchContentLayouts(R.id.content_my_toilets);
         } else if (id == R.id.nav_settings) {
