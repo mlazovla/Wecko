@@ -41,6 +41,14 @@ public class NearestToilet extends AppCompatActivity
                 startActivity(intent);
             }
         });
+        LinearLayout toiletImageSection = (LinearLayout) findViewById(R.id.toiletImageSection);
+        toiletImageSection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                (findViewById(R.id.content_nearest_toilet)).setVisibility(View.GONE);
+                (findViewById(R.id.content_detail)).setVisibility(View.VISIBLE);
+            }
+        });
 
         //LinearLayout toiletInfoLeafs = (LinearLayout )findViewById(R.id.toiletInfo);
         final LinearLayout toiletInfoLeafs = (LinearLayout )findViewById(R.id.toiletInfo);
@@ -118,7 +126,6 @@ public class NearestToilet extends AppCompatActivity
             Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.google.cz/maps/place/Ve%C5%99ejn%C3%A9+WC/@50.0776336,14.453381,17z/data=!3m1!4b1!4m5!3m4!1s0x470b9362bcbf46cd:0x8de28d810eb34686!8m2!3d50.0776336!4d14.4555697"));
             intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
             startActivity(intent);
-
         } else if (id == R.id.nav_approve_toilet) {
             this.switchContentLayouts(R.id.content_approve_toilet);
         } else if (id == R.id.nav_addToilet) {
@@ -146,6 +153,7 @@ public class NearestToilet extends AppCompatActivity
     private void switchContentLayouts(int idToEnable) {
         // Disable all contents
         (findViewById(R.id.content_nearest_toilet)).setVisibility(View.GONE);
+        (findViewById(R.id.content_detail)).setVisibility(View.GONE);
         (findViewById(R.id.content_approve_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_add_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_my_toilets)).setVisibility(View.GONE);
