@@ -152,6 +152,7 @@ public class NearestToilet extends AppCompatActivity
     private void switchContentLayouts(int idToEnable) {
         // Disable all contents
         (findViewById(R.id.content_nearest_toilet)).setVisibility(View.GONE);
+        (findViewById(R.id.content_detail)).setVisibility(View.GONE);
         (findViewById(R.id.content_approve_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_add_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_my_toilets)).setVisibility(View.GONE);
