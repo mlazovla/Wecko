@@ -70,6 +70,7 @@ public class NearestToilet extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().getItem(0).setChecked(true);
         this.switchContentLayouts(R.id.content_nearest_toilet);
 
         // Map button
@@ -104,6 +105,8 @@ public class NearestToilet extends AppCompatActivity
         else if ( (findViewById(R.id.content_nearest_toilet)).getVisibility() == View.GONE )
         {
             switchContentLayouts(R.id.content_nearest_toilet);
+            NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+            navigationView.getMenu().getItem(0).setChecked(true);
         }
 
         else {
