@@ -71,7 +71,8 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="5dp"
-                android:paddingTop="5dp" />
+                android:paddingTop="5dp"
+                android:textColor="@android:color/darker_gray" />
         </LinearLayout>
     </LinearLayout>
 
