@@ -32,15 +32,6 @@ public class NearestToilet extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddToilet.class);
-                startActivity(intent);
-            }
-        });
         LinearLayout toiletImageSection = (LinearLayout) findViewById(R.id.toiletImageSection);
         toiletImageSection.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,14 +95,22 @@ public class NearestToilet extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed ()
+    {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        else if ( (findViewById(R.id.content_nearest_toilet)).getVisibility() == View.GONE )
+        {
+            switchContentLayouts(R.id.content_nearest_toilet);
+        }
+
+        else {
             super.onBackPressed();
         }
     }
+
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -153,7 +152,6 @@ public class NearestToilet extends AppCompatActivity
     private void switchContentLayouts(int idToEnable) {
         // Disable all contents
         (findViewById(R.id.content_nearest_toilet)).setVisibility(View.GONE);
-        (findViewById(R.id.content_detail)).setVisibility(View.GONE);
         (findViewById(R.id.content_approve_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_add_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_my_toilets)).setVisibility(View.GONE);
