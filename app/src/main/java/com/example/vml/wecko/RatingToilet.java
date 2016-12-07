@@ -80,4 +80,22 @@ public class RatingToilet extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed ()
+    {
+        if ((findViewById(R.id.content_ratings_2)).getVisibility() == View.VISIBLE) {
+            (findViewById(R.id.content_ratings_2)).setVisibility(View.GONE);
+            (findViewById(R.id.content_ratings_1)).setVisibility(View.VISIBLE);
+        }
+        else if ((findViewById(R.id.content_ratings_3)).getVisibility() == View.VISIBLE)
+        {
+            (findViewById(R.id.content_ratings_3)).setVisibility(View.GONE);
+            (findViewById(R.id.content_ratings_2)).setVisibility(View.VISIBLE);
+        }
+
+        else {
+            super.onBackPressed();
+        }
+    }
 }

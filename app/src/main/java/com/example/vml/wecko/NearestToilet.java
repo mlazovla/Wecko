@@ -32,16 +32,6 @@ public class NearestToilet extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddToilet.class);
-                startActivity(intent);
-            }
-        });
-
         //LinearLayout toiletInfoLeafs = (LinearLayout )findViewById(R.id.toiletInfo);
         final LinearLayout toiletInfoLeafs = (LinearLayout )findViewById(R.id.toiletInfo);
         final TextView toiletReview = (TextView) findViewById(R.id.toiletReview);
@@ -96,14 +86,22 @@ public class NearestToilet extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed ()
+    {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        else if ( (findViewById(R.id.content_nearest_toilet)).getVisibility() == View.GONE )
+        {
+            switchContentLayouts(R.id.content_nearest_toilet);
+        }
+
+        else {
             super.onBackPressed();
         }
     }
+
 
 
     @SuppressWarnings("StatementWithEmptyBody")
