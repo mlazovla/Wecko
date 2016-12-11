@@ -14,6 +14,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
@@ -61,7 +63,6 @@ public class NearestToilet extends AppCompatActivity
             }
         });
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -92,6 +93,27 @@ public class NearestToilet extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+        Button approveButton = (Button)findViewById(R.id.btnApprove);
+        Button disapproveButton = (Button)findViewById(R.id.btnDisapprove);
+        View.OnClickListener approveListener = new View.OnClickListener() {
+            int state;
+            @Override
+            public void onClick(View view) {
+                ImageView aprImage = ((ImageView)findViewById(R.id.imgApprove));
+                TextView toiletName = ((TextView)findViewById(R.id.lblToiletName));
+                aprImage.setImageResource(0);
+                state = (state + 1) % 3;
+                switch (state)
+                {
+                    case 0: aprImage.setImageResource(R.drawable.toalety_karlovo_namesti);toiletName.setText("WC Karlovo náměstí");break;
+                    case 1: aprImage.setImageResource(R.drawable.toilet_to_approve_2);toiletName.setText("WC Hlavní nádraží");break;
+                    case 2: aprImage.setImageResource(R.drawable.toilet_to_approve_3);toiletName.setText("WC Strahov");break;
+                }
+            }
+        };
+        approveButton.setOnClickListener(approveListener);
+        disapproveButton.setOnClickListener(approveListener);
     }
 
     @Override
@@ -100,6 +122,7 @@ public class NearestToilet extends AppCompatActivity
         super.onResume();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.getMenu().getItem(0).setChecked(true);
+        switchContentLayouts(R.id.content_nearest_toilet);
     }
 
     @Override

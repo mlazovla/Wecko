@@ -13,8 +13,62 @@
     tools:context="com.example.vml.wecko.NearestToilet"
     tools:showIn="@layout/app_bar_nearest_toilet">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Schválit záchod" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="WC Karlovo náměstí"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblToiletName"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:textSize="25sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            app:srcCompat="@drawable/toalety_karlovo_namesti"
+            android:id="@+id/imgApprove"
+            android:layout_height="300dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:text="NE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnDisapprove"
+                android:layout_weight="1"
+                android:background="@android:color/holo_red_dark" />
+
+            <TextView
+                android:text="DALŠÍ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblNext"
+                android:layout_weight="1"
+                android:textAlignment="center" />
+
+            <Button
+                android:text="OK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnApprove"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

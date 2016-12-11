@@ -37,5 +37,4 @@
     <include layout="@layout/activity_compass"
         android:visibility="gone"/>
 
-
 </android.support.design.widget.CoordinatorLayout>
