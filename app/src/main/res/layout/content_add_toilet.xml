@@ -13,4 +13,109 @@
     tools:context="com.example.vml.wecko.AddToilet"
     tools:showIn="@layout/activity_add_toilet">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                app:srcCompat="@drawable/toalety_karlovo_namesti"
+                android:id="@+id/imageView7"
+                android:layout_width="111dp"
+                android:scaleType="centerInside"
+                android:layout_height="155dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/txtToiletName"
+                    android:layout_weight="1"
+                    android:hint="Název"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/txtToiletCoordinates"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:hint="GPS Souřadnice" />
+
+                <CheckBox
+                    android:text="Zdarma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cbFree"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/add_toilet_map"
+            android:id="@+id/imgMapGPSSelector"
+            android:layout_weight="1"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutPrice">
+
+            <TextView
+                android:text="Cena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewCena"
+                android:textSize="22sp"
+                android:textStyle="normal|bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/editText6"
+                android:inputType="numberDecimal"
+                android:hint="Muži" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/editText5"
+                android:hint="Ženy / kabinka"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>

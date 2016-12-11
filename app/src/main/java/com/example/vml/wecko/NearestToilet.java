@@ -163,10 +163,11 @@ public class NearestToilet extends AppCompatActivity
         // Disable all contents
         (findViewById(R.id.content_nearest_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_approve_toilet)).setVisibility(View.GONE);
-        (findViewById(R.id.content_add_toilet)).setVisibility(View.GONE);
+//        (findViewById(R.id.content_add_toilet)).setVisibility(View.GONE);
         (findViewById(R.id.content_my_toilets)).setVisibility(View.GONE);
         (findViewById(R.id.content_settings)).setVisibility(View.GONE);
         (findViewById(R.id.content_about)).setVisibility(View.GONE);
+        (findViewById(R.id.content_detail)).setVisibility(View.GONE);
 
         // Enable one content
         (findViewById(idToEnable)).setVisibility(View.VISIBLE);
