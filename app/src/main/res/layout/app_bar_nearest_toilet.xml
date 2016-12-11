@@ -26,8 +26,8 @@
         android:visibility="gone"/>
     <include layout="@layout/content_approve_toilet"
         android:visibility="gone"/>
-    <include layout="@layout/content_add_toilet"
-        android:visibility="gone"/>
+<!--    <include layout="@layout/content_add_toilet"
+        android:visibility="gone"/> -->
     <include layout="@layout/content_my_toilets"
         android:visibility="gone"/>
     <include layout="@layout/content_settings"
