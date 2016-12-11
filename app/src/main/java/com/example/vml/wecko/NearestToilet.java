@@ -26,6 +26,7 @@ public class NearestToilet extends AppCompatActivity
 
     ImageButton mapButton;
     ImageButton compasButton;
+    ImageButton swipeUpButton, swipeDownButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,22 @@ public class NearestToilet extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Compass.class);
                 startActivity(intent);
+            }
+        });
+
+        swipeUpButton = (ImageButton)this.findViewById(R.id.swipeUp);
+        swipeUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchContentLayouts(R.id.content_detail);
+            }
+        });
+
+        swipeDownButton = (ImageButton)this.findViewById(R.id.swipeDown);
+        swipeDownButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchContentLayouts(R.id.content_nearest_toilet);
             }
         });
 
