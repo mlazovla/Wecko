@@ -58,7 +58,7 @@ public class Compass extends AppCompatActivity implements SensorEventListener {
                 float orientation[] = new float[3];
                 SensorManager.getOrientation(R, orientation);
                 float azimut = updateAzimut(orientation[0]); // orientation contains: azimut, pitch and roll
-                this.compassDirection.setRotation(-57*azimut);
+                this.compassDirection.setRotation(-57.2957795f*azimut);
             }
         }
     }
