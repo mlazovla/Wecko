@@ -17,6 +17,7 @@ public class Compass extends AppCompatActivity implements SensorEventListener {
     ImageView compassDirection;
     TextView worldDirection;
 
+    private float [] lastAzimuts = new float[10];
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,5 +61,15 @@ public class Compass extends AppCompatActivity implements SensorEventListener {
                 this.compassDirection.setRotation(-57*azimut);
             }
         }
+    }
+
+    private float updateAzimut(float azimut) {
+        float sum = azimut;
+        for (int i = 0; i < 9; i++) {
+            this.lastAzimuts[i] = this.lastAzimuts[i-1];
+            sum += this.lastAzimuts[i];
+        }
+        this.lastAzimuts[9] = azimut;
+        return sum / 10.0f;
     }
 }
