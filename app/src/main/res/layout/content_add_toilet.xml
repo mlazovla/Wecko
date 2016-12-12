@@ -74,7 +74,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="10dp" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -83,8 +83,8 @@
             android:id="@+id/imgMapGPSSelector"
             android:layout_weight="1"
             android:scaleType="fitStart"
-            android:adjustViewBounds="false"
-            android:cropToPadding="false" />
+            android:cropToPadding="false"
+            android:adjustViewBounds="false" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -115,6 +115,32 @@
                 android:id="@+id/editText5"
                 android:hint="Ženy / kabinka"
                 android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutButtons">
+
+            <Button
+                android:text="ZRUŠIT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnCancelAdd"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.Material.Small"
+                style="@style/Widget.AppCompat.Button.Borderless" />
+
+            <Button
+                android:text="PŘIDAT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAcceptAdd"
+                android:layout_weight="1"
+                android:background="@android:color/holo_blue_dark"
+                android:textColor="@android:color/background_light" />
         </LinearLayout>
 
     </LinearLayout>

@@ -23,6 +23,8 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class NearestToilet extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -191,6 +193,15 @@ public class NearestToilet extends AppCompatActivity
         };
         approveButton.setOnClickListener(approveListener);
         disapproveButton.setOnClickListener(approveListener);
+        findViewById(R.id.lblNext).setOnClickListener(approveListener);
+        findViewById(R.id.btnCancelApprove).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+                navigationView.getMenu().getItem(0).setChecked(true);
+                switchContentLayouts(R.id.content_nearest_toilet);
+            }
+        });
     }
 
     @Override

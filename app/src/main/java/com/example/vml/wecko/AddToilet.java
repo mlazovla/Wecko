@@ -11,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -45,6 +46,15 @@ public class AddToilet extends AppCompatActivity {
                 mapImage.setScaleType(ImageView.ScaleType.FIT_START);
             }
         });
+
+        View.OnClickListener addListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed ();
+            }
+        };
+        findViewById(R.id.btnCancelAdd).setOnClickListener(addListener);
+        findViewById(R.id.btnAcceptAdd).setOnClickListener(addListener);
     }
 
 }
