@@ -11,7 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.vml.wecko.NearestToilet"
-    tools:showIn="@layout/app_bar_nearest_toilet">
+    >
 
     <LinearLayout
         android:orientation="vertical"
@@ -55,7 +55,7 @@
                 android:background="@android:color/holo_red_dark" />
 
             <TextView
-                android:text="PŘESKOČIT"
+                android:text="NEVÍM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/lblNext"

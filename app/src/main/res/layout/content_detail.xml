@@ -11,291 +11,325 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.vml.wecko.NearestToilet"
-    tools:showIn="@layout/app_bar_nearest_toilet"
     >
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
-
-        <ImageButton
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            app:srcCompat="@drawable/double_arrow_down"
-            android:id="@+id/swipeDown"
-            android:scaleType="fitXY"
-            android:background="@null"
-            android:layout_gravity="center_horizontal"/>
-
-        <TextView
-            android:text="detail WC Výstaviště Holešovice, Praha 4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewDetailHeading"
-            android:layout_alignParentTop="true"
-            android:textSize="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_alignParentStart="true" />
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/navBar"
-            android:layout_marginTop="15dp"
-            android:layout_weight="4">
-
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/icon_map"
-                android:background="@null"
-                android:id="@+id/mapNav"
-                android:scaleType="fitCenter"
-                android:layout_weight="1" />
-
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/icon_compass"
-                android:id="@+id/compassNav"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:layout_weight="1" />
-
-            <Button
-                android:text="Nahlásit"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/alertNav"
-                android:gravity="center_vertical"
-                android:layout_weight="1"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored" />
-
-        </LinearLayout>
+        android:scrollbarSize="0dp">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:id="@+id/galleryDiv">
+            android:layout_height="wrap_content"
+            >
+
+            <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:srcCompat="@drawable/double_arrow_down"
+                android:id="@+id/swipeDown"
+                android:scaleType="fitXY"
+                android:background="@null"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:text="WC Výstaviště Holešovice, Praha 4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDetailHeading"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentStart="true"
+                android:textAppearance="@style/TextAppearance.AppCompat" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="48dp"
+                android:id="@+id/navBar"
+                android:layout_marginTop="15dp"
+                android:gravity="top|center_horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
 
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/add_photo"
-                    android:id="@+id/imageButton2"
-                    android:scaleType="fitCenter"
-                    android:layout_weight="2"
+                    app:srcCompat="@drawable/icon_map"
                     android:background="@null"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="10dp"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/toilet_to_approve_3"
-                    android:id="@+id/imageView10"
+                    android:id="@+id/mapNav"
+                    android:scaleType="fitCenter"
                     android:layout_weight="1"
-                    android:layout_marginRight="10dp"/>
+                    android:elevation="0dp"
+                    android:maxHeight="10dp"
+                    android:maxWidth="10dp" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <ImageButton
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/toilet_to_approve_3"
-                    android:id="@+id/imageView11"
+                    app:srcCompat="@drawable/icon_compass"
+                    android:id="@+id/compassNav"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
                     android:layout_weight="1" />
+
+                <Button
+                    android:text="Nahlásit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/alertNav"
+                    android:layout_weight="1"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:id="@+id/commentsDiv">
-
-            <LinearLayout
-                android:orientation="vertical"
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/comment_1"
-                android:layout_weight="1">
+                android:layout_weight="0.14"
+                android:layout_marginTop="40dp"
+                android:scrollbarSize="0dp">
 
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/personName1"
-                    android:layout_weight="1">
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:layout_width="76dp"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/add_photo"
+                        android:id="@+id/imageButton2"
+                        android:scaleType="fitCenter"
+                        android:background="@null"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@android:drawable/sym_def_app_icon"
-                        android:id="@+id/imageView12"
+                        app:srcCompat="@drawable/toilet_to_approve_3"
+                        android:id="@+id/imageView10"
                         android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:layout_marginRight="5dp"
-                        android:gravity="left"/>
+                        android:layout_marginRight="10dp"/>
 
-                    <TextView
-                        android:text="Lovec_WC"
+                    <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/nickname1"
-                        android:layout_weight="9"
-                        android:gravity="center_vertical"
-                        android:textSize="18sp" />
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/toilet_to_approve_3"
+                        android:id="@+id/imageView11"
+                        android:layout_weight="1" />
+
                 </LinearLayout>
-
-                <TextView
-                    android:text="Je to v cajku, na to, ze je to zadarmo prekvapil."
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/personCom1"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
+            </HorizontalScrollView>
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/comment_2"
-                android:layout_weight="1">
+                android:layout_weight="2"
+                android:id="@+id/commentsDiv"
+                android:layout_marginTop="40dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/comment_1"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/personName1"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@android:drawable/sym_def_app_icon"
+                            android:id="@+id/imageView12"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            android:layout_marginRight="5dp"
+                            android:gravity="left"/>
+
+                        <TextView
+                            android:text="Lovec_WC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/nickname1"
+                            android:layout_weight="9"
+                            android:gravity="center_vertical"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="Je to v cajku, na to, ze je to zadarmo prekvapil."
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/personCom1"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/comment_2"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/personName2"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@android:drawable/sym_def_app_icon"
+                            android:id="@+id/imageView13"
+                            android:background="#FFFFFF"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:text="rejpal134"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/nickname2"
+                            android:layout_weight="9"
+                            android:gravity="center_vertical"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="No to nene, ble, fuj, palec dolu."
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/personCom2"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/comment_3"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/personName3"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@android:drawable/sym_def_app_icon"
+                            android:id="@+id/imageView14"
+                            android:background="#FFFFFF"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:text="Mr. Bombastic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/nickname3"
+                            android:layout_weight="9"
+                            android:gravity="center_vertical"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="Bylo to BOMBA !"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/personCom3"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/comment_4"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/personName4"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@android:drawable/sym_def_app_icon"
+                            android:id="@+id/imageView15"
+                            android:background="#FFFFFF"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:text="Prdo225"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/nickname4"
+                            android:layout_weight="9"
+                            android:gravity="center_vertical"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="Hm uslo, prijdu zas."
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/personCom4"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/personName2"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_marginTop="40dp"
+                    android:gravity="bottom">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        app:srcCompat="@android:drawable/sym_def_app_icon"
-                        android:id="@+id/imageView13"
-                        android:background="#FFFFFF"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="1" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:ems="10"
+                        android:id="@+id/editText7"
+                        android:layout_weight="1"
+                        android:hint="Můj komentář ..." />
 
-                    <TextView
-                        android:text="rejpal134"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/nickname2"
-                        android:layout_weight="9"
-                        android:gravity="center_vertical"
-                        android:textSize="18sp" />
-
+                    <Button
+                        android:text="Komentovat"
+                        android:layout_width="129dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.AppCompat.Button.Colored" />
                 </LinearLayout>
-
-                <TextView
-                    android:text="No to nene, ble, fuj, palec dolu."
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/personCom2"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/comment_3"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/personName3"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        app:srcCompat="@android:drawable/sym_def_app_icon"
-                        android:id="@+id/imageView14"
-                        android:background="#FFFFFF"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:text="Mr. Bombastic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/nickname3"
-                        android:layout_weight="9"
-                        android:gravity="center_vertical"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:text="Bylo to BOMBA !"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/personCom3"
-                    android:layout_weight="1"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/comment_4"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/personName4"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        app:srcCompat="@android:drawable/sym_def_app_icon"
-                        android:id="@+id/imageView15"
-                        android:background="#FFFFFF"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:text="Prdo225"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/nickname4"
-                        android:layout_weight="9"
-                        android:gravity="center_vertical"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:text="Hm uslo, prijdu zas."
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/personCom4"
-                    android:layout_weight="1"/>
-
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
