@@ -27,6 +27,8 @@ public class NearestToilet extends AppCompatActivity
     ImageButton mapButton;
     ImageButton compasButton;
     ImageButton swipeUpButton, swipeDownButton;
+    ImageButton mapNav, compassNav;
+    Button alertNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +97,7 @@ public class NearestToilet extends AppCompatActivity
             }
         });
 
+        // swipe up Button
         swipeUpButton = (ImageButton)this.findViewById(R.id.swipeUp);
         swipeUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +106,7 @@ public class NearestToilet extends AppCompatActivity
             }
         });
 
+        // swipe down Button
         swipeDownButton = (ImageButton)this.findViewById(R.id.swipeDown);
         swipeDownButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +114,38 @@ public class NearestToilet extends AppCompatActivity
                 switchContentLayouts(R.id.content_nearest_toilet);
             }
         });
+
+        // map nav button in detail
+        mapNav = (ImageButton)this.findViewById(R.id.mapNav);
+        mapNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://www.google.cz/maps/dir/50.0752982,14.4561334/Ve%C5%99ejn%C3%A9+WC,+Orlick%C3%A1,+130+00+Praha+3/@50.0764717,14.453885,17z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x470b9362bcbf46cd:0x8de28d810eb34686!2m2!1d14.4555697!2d50.0776336!3e2?hl=cs"));
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+                startActivity(intent);
+            }
+        });
+
+        // compass button in detail
+        compassNav = (ImageButton)this.findViewById(R.id.compassNav);
+        compassNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Compass.class);
+                startActivity(intent);
+            }
+        });
+
+        // report button in detail
+        alertNav = (Button) this.findViewById(R.id.alertNav);
+        alertNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ReportToilet.class );
+                startActivity(intent);
+            }
+        });
+
 
         Button approveButton = (Button)findViewById(R.id.btnApprove);
         Button disapproveButton = (Button)findViewById(R.id.btnDisapprove);

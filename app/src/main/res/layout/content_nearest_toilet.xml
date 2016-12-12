@@ -33,8 +33,8 @@
                 android:id="@+id/infoAfterClick">
 
                 <TextView
-                    android:text="Je uplne mega, radost kakat ..."
-                    android:layout_width="270dp"
+                    android:text="Docela čistý, ale ..."
+                    android:layout_width="170dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/toiletReview"
                     android:layout_alignParentBottom="true"
