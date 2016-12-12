@@ -34,11 +34,18 @@
         <item
             android:id="@+id/nav_testReport"
             android:icon="@drawable/ic_menu_send"
-            android:title="test Nahlasit" />
+            android:title="test Nahlasit"
+            android:visible="false" />
         <item
             android:id="@+id/nav_testRating"
             android:icon="@drawable/ic_menu_send"
-            android:title="test Ohodnotit" />
+            android:title="test Ohodnotit"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_testSwipe"
+            android:icon="@drawable/ic_menu_send"
+            android:title="test Swipe"
+            android:visible="false" />
     </group>
 
 </menu>

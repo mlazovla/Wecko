@@ -138,12 +138,12 @@
                     <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        app:srcCompat="@drawable/icon_map"
+                        app:srcCompat="@drawable/add_toilet_map_clicked"
                         android:id="@+id/btnNavMap"
                         android:layout_weight="1"
-                        android:scaleType="fitCenter"
+                        android:scaleType="centerCrop"
                         android:background="@null"
-                        android:padding="35dp" />
+                        android:elevation="0dp" />
 
                     <ImageButton
                         android:layout_width="wrap_content"

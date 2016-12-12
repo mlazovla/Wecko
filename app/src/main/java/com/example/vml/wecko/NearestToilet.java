@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.MotionEventCompat;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -99,10 +101,18 @@ public class NearestToilet extends AppCompatActivity
 
         // swipe up Button
         swipeUpButton = (ImageButton)this.findViewById(R.id.swipeUp);
-        swipeUpButton.setOnClickListener(new View.OnClickListener() {
+        swipeUpButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                switchContentLayouts(R.id.content_detail);
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = MotionEventCompat.getActionMasked(event);
+
+                switch(action) {
+                    case (MotionEvent.ACTION_UP) :
+                        switchContentLayouts(R.id.content_detail);
+                        return true;
+                    default :
+                        return onTouchEvent(event);
+                }
             }
         });
 
@@ -114,6 +124,20 @@ public class NearestToilet extends AppCompatActivity
                 switchContentLayouts(R.id.content_nearest_toilet);
             }
         });
+        /*swipeDownButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = MotionEventCompat.getActionMasked(event);
+
+                switch(action) {
+                    case (MotionEvent.ACTION_DOWN) :
+                        switchContentLayouts(R.id.content_nearest_toilet);
+                        return true;
+                    default :
+                        return onTouchEvent(event);
+                }
+            }
+        });*/
 
         // map nav button in detail
         mapNav = (ImageButton)this.findViewById(R.id.mapNav);
@@ -228,11 +252,36 @@ public class NearestToilet extends AppCompatActivity
         } else if (id == R.id.nav_testReport) {
             Intent intent = new Intent(getApplicationContext(), ReportToilet.class);
             startActivity(intent);
-        }
+        } else if (id == R.id.nav_testReport) {
+            Intent intent = new Intent(getApplicationContext(), ReportToilet.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_testSwipe) {
+        Intent intent = new Intent(getApplicationContext(), SwipeActivity.class);
+        startActivity(intent);
+    }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    // This example shows an Activity, but you would use the same approach if
+    // you were subclassing a View.
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+
+        int action = MotionEventCompat.getActionMasked(event);
+
+        switch(action) {
+            case (MotionEvent.ACTION_DOWN) :
+                this.switchContentLayouts(R.id.content_nearest_toilet);
+                return true;
+            case (MotionEvent.ACTION_UP) :
+                this.switchContentLayouts(R.id.content_detail);
+                return true;
+            default :
+                return super.onTouchEvent(event);
+        }
     }
 
     private void switchContentLayouts(int idToEnable) {
