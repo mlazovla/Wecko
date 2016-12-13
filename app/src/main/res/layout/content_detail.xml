@@ -134,14 +134,18 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:id="@+id/commentsDiv"
-                    android:layout_marginTop="40dp">
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp">
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/comment_1"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
 
                         <LinearLayout
                             android:orientation="horizontal"
@@ -155,19 +159,28 @@
                                 android:layout_height="wrap_content"
                                 app:srcCompat="@android:drawable/sym_def_app_icon"
                                 android:id="@+id/imageView12"
-                                android:layout_weight="1"
+                                android:layout_weight="0"
                                 android:background="#FFFFFF"
                                 android:layout_marginRight="5dp"
-                                android:gravity="left"/>
+                                android:gravity="left"
+                                android:elevation="23dp" />
 
                             <TextView
                                 android:text="Lovec_WC"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:id="@+id/nickname1"
-                                android:layout_weight="9"
+                                android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:textSize="18sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                app:srcCompat="@drawable/toilet_clean"
+                                android:id="@+id/imageView8"
+                                android:layout_weight="3"
+                                android:elevation="18dp" />
                         </LinearLayout>
 
                         <TextView
@@ -184,37 +197,48 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/comment_2"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
 
                         <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/personName2"
+                            android:id="@+id/personName11"
                             android:layout_weight="1">
 
                             <ImageView
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 app:srcCompat="@android:drawable/sym_def_app_icon"
-                                android:id="@+id/imageView13"
+                                android:id="@+id/imageView121"
+                                android:layout_weight="0"
                                 android:background="#FFFFFF"
                                 android:layout_marginRight="5dp"
-                                android:layout_weight="1" />
+                                android:gravity="left"
+                                android:elevation="23dp" />
 
                             <TextView
-                                android:text="rejpal134"
-                                android:layout_width="wrap_content"
+                                android:text="Lovec_WC"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:id="@+id/nickname2"
-                                android:layout_weight="9"
+                                android:id="@+id/nickname11"
+                                android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:textSize="18sp" />
 
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                app:srcCompat="@drawable/toilet_disgusting"
+                                android:id="@+id/imageView81"
+                                android:layout_weight="3"
+                                android:elevation="18dp" />
                         </LinearLayout>
 
                         <TextView
-                            android:text="No to nene, ble, fuj, palec dolu."
+                            android:text="No nene, ble, fuj."
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/personCom2"
@@ -227,39 +251,51 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/comment_3"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
 
                         <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/personName3"
+                            android:id="@+id/personName12"
                             android:layout_weight="1">
 
                             <ImageView
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 app:srcCompat="@android:drawable/sym_def_app_icon"
-                                android:id="@+id/imageView14"
+                                android:id="@+id/imageView122"
+                                android:layout_weight="0"
                                 android:background="#FFFFFF"
                                 android:layout_marginRight="5dp"
-                                android:layout_weight="1" />
+                                android:gravity="left"
+                                android:elevation="23dp" />
 
                             <TextView
-                                android:text="Mr. Bombastic"
-                                android:layout_width="wrap_content"
+                                android:text="Lovec_WC"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:id="@+id/nickname3"
-                                android:layout_weight="9"
+                                android:id="@+id/nickname12"
+                                android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:textSize="18sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                app:srcCompat="@drawable/toilet_clean"
+                                android:id="@+id/imageView82"
+                                android:layout_weight="3"
+                                android:elevation="18dp" />
                         </LinearLayout>
 
                         <TextView
-                            android:text="Bylo to BOMBA !"
+                            android:text="Byla to BOMBA!"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/personCom3"
+                            android:id="@+id/personCom12"
                             android:layout_weight="1"/>
 
                     </LinearLayout>
@@ -269,40 +305,51 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/comment_4"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
 
                         <LinearLayout
                             android:orientation="horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/personName4"
+                            android:id="@+id/personName13"
                             android:layout_weight="1">
 
                             <ImageView
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 app:srcCompat="@android:drawable/sym_def_app_icon"
-                                android:id="@+id/imageView15"
+                                android:id="@+id/imageView123"
+                                android:layout_weight="0"
                                 android:background="#FFFFFF"
                                 android:layout_marginRight="5dp"
-                                android:layout_weight="1" />
+                                android:gravity="left"
+                                android:elevation="23dp" />
 
                             <TextView
-                                android:text="Prdo225"
-                                android:layout_width="wrap_content"
+                                android:text="Lovec_WC"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:id="@+id/nickname4"
-                                android:layout_weight="9"
+                                android:id="@+id/nickname13"
+                                android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:textSize="18sp" />
 
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                app:srcCompat="@drawable/toilet_dirty"
+                                android:id="@+id/imageView83"
+                                android:layout_weight="3"
+                                android:elevation="18dp" />
                         </LinearLayout>
 
                         <TextView
                             android:text="Hm uslo, prijdu zas."
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/personCom4"
+                            android:id="@+id/personCom13"
                             android:layout_weight="1"/>
 
                     </LinearLayout>

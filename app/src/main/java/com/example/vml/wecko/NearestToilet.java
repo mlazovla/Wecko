@@ -33,6 +33,7 @@ public class NearestToilet extends AppCompatActivity
     ImageButton swipeUpButton, swipeDownButton;
     ImageButton mapNav, compassNav;
     Button alertNav;
+    LinearLayout infoDiv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,6 +141,14 @@ public class NearestToilet extends AppCompatActivity
                 }
             }
         });*/
+
+        infoDiv = (LinearLayout)this.findViewById(R.id.infoDiv);
+        infoDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchContentLayouts(R.id.content_detail);
+            }
+        });
 
         // map nav button in detail
         mapNav = (ImageButton)this.findViewById(R.id.mapNav);
