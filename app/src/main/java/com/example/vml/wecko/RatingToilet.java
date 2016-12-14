@@ -79,6 +79,65 @@ public class RatingToilet extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //  Make page numbers clickable
+        (findViewById(R.id.textView16)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_1);
+            }
+        });
+
+        (findViewById(R.id.textView17)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_2);
+            }
+        });
+
+        (findViewById(R.id.textView18)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_3);
+            }
+        });
+
+        (findViewById(R.id.textView21)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_1);
+            }
+        });
+        (findViewById(R.id.textView22)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_2);
+            }
+        });
+        (findViewById(R.id.textView23)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_3);
+            }
+        });
+        (findViewById(R.id.textView31)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_1);
+            }
+        });
+        (findViewById(R.id.textView32)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_2);
+            }
+        });
+        (findViewById(R.id.textView33)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchContentLayouts(R.id.content_ratings_3);
+            }
+        });
     }
 
     @Override
@@ -97,5 +156,15 @@ public class RatingToilet extends AppCompatActivity {
         else {
             super.onBackPressed();
         }
+    }
+
+    private void switchContentLayouts(int idToEnable) {
+        // Disable all contents
+        (findViewById(R.id.content_ratings_1)).setVisibility(View.GONE);
+        (findViewById(R.id.content_ratings_2)).setVisibility(View.GONE);
+        (findViewById(R.id.content_ratings_3)).setVisibility(View.GONE);
+
+        // Enable one content
+        (findViewById(idToEnable)).setVisibility(View.VISIBLE);
     }
 }
